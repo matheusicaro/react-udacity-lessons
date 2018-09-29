@@ -1,0 +1,19 @@
+{
+  "name": "udacity",
+  "version": "1.0.0",
+  "description": "Lessons of course React in Udacity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusicaro/react-udacity-lessons.git"
+  },
+  "author": "Matheus Icaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusicaro/react-udacity-lessons/issues"
+  },
+  "homepage": "https://github.com/matheusicaro/react-udacity-lessons#readme"
+}
