@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class ListContacts extends Component {
-    
-    render(){
-
-        console.log("props..:", this.props);
-        
+function ListContacts (props) {
+         
         return (
             <ol className="list-contacts">
                 {
-                    this.props.contacts.map( (element) =>(
+                    props.contacts.map( (element) =>(
 
                         <li key={ element.id } className='contact-list-item'>
                             
@@ -18,22 +14,24 @@ class ListContacts extends Component {
                                 style={{
                                     backgroundImage: `url( ${element.avatarURL} )`
                                 }}
-                            ></div>
+                            ></div> 
                             
                             <div className='contact-details'>
                                 <p>{ element.name }</p>
                                 <p>@{ element.handle }</p>
                             </div>
 
-                            <div className='contact-remove'>
-                                remove                                
-                            </div>
+                            <button
+                                onClick={ ()=>props.onDeleteContact(element) } 
+                                className='contact-remove'
+                            >
+                                remove                      
+                            </button>
                             
                         </li>
                     ))
                 }
             </ol>
         )
-    }
 }
 export default ListContacts
