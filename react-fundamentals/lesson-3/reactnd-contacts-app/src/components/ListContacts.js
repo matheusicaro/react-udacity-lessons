@@ -12,10 +12,14 @@ class ListContacts extends Component{
         query:""
     }
 
-    changeQuery = (event) =>{
+    updateQuery = (event) =>{
         this.setState( ()=> ({
             query: event
         }))
+    }
+
+    clearQuery = () =>{
+        this.updateQuery('')
     }
 
     render(){
@@ -36,9 +40,17 @@ class ListContacts extends Component{
                         type='text'
                         placeholder='Search Contacts'
                         value={ query }
-                        onChange={ (event)=> this.changeQuery(event.target.value) }>
+                        onChange={ (event)=> this.updateQuery(event.target.value) }>
                     </input>
                 </div>
+
+                { showContacts.length !== contacts.length && (
+                    
+                    <div className='showing-contacts'>
+                        <span>Now showing {showContacts.length} of {contacts.length},</span>
+                        <button onClick={ this.clearQuery}> clear </button>
+                    </div>
+                )}
 
                 <ol className="list-contacts">
                     {
