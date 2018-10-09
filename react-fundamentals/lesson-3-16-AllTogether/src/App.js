@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-/*
-This exercise will help you put together and practice all of the concepts you've
-learned thus far. It will also help you form a strong foundational knowledge of
-React and prepare you for your first project.
+import UserAddHeader from './components/UserAddHeader'
+import UserAdd from './components/UserAdd'
+import UserListHeader from './components/UserListHeader'
+import UserListView from './components/UserListView'
+import Button from './components/Button'
 
-The instructions for this project are located in the `instructions.md` file.
-*/
 
 class App extends Component {
   render() {
@@ -18,6 +17,16 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
+      
+        <UserAddHeader></UserAddHeader>
+        <UserAdd></UserAdd>
+
+        <UserListHeader></UserListHeader>
+        <UserListView>
+            button here
+        </UserListView>
+        <Button></Button>
+
       </div>
     );
   }
