@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styles/style.css';
 
 const UserListView = ()=>{
 
     return(
-        <div>
+        <div className="Component">
             User List View
         </div>
     )

@@ -1,10 +1,11 @@
 import React from 'react'
+import '../styles/style.css';
 
 const UserAddHeader = ()=>{
 
     return(
-        <div>
-            User add input
+        <div className="Component">
+            Hey, add users to count the number of games that have been played.
         </div>
     )
 

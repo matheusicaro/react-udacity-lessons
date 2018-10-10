@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styles/style.css';
 
 const UserListHeader = ()=>{
 
     return(
-        <div>
+        <div className="Component">
             User List Header
         </div>
     )
