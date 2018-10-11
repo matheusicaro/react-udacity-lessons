@@ -12,7 +12,8 @@ class UserAdd extends Component {
                 firstName: '',
                 lastName: '',
                 login: ''
-            }
+            },
+            isNewUser: true
         }
     }
 
@@ -29,7 +30,25 @@ class UserAdd extends Component {
     }
 
     handleSubmit = (event) =>{
+        event.preventDefault();
+        
+        let user = this.state.user;
+        
+        let isContained;
 
+        for(let i=0; i < this.props.users.length; i++){
+            if(this.props.users[i].firstName === user.firstName){
+                isContained = true;
+                break
+            }
+        }
+
+        if(isContained)
+            this.setState({ isNewUser: false})
+        else{
+            this.props.add(user)
+            this.setState({ isNewUser: true})
+        }
     }
 
     isInvalidForm = () =>{
@@ -73,7 +92,7 @@ class UserAdd extends Component {
 
             <Button isDisabled={this.isInvalidForm()} text="Submit"></Button>
             
-            { (this.isInvalidForm()) ? <div style={warning}> Attention, there is a blank field. </div> : "" }
+            { (this.state.isNewUser) ? "" : <div style={warning}> Ops, user existing whith this <b>first name</b></div>  }
 
         </form>
       )

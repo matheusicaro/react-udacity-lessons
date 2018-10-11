@@ -10,6 +10,19 @@ import UserListView from './components/UserListView'
 
 
 class App extends Component {
+  
+  state = {
+    users:[]
+  }
+
+  addUser = (user) =>{
+
+    this.setState(currentState =>({
+        users: [...currentState.users, user]
+    }))
+
+  }
+  
   render() {
     return (
       <div className="App">
@@ -19,10 +32,10 @@ class App extends Component {
         </header>
       
         <UserAddHeader ></UserAddHeader>
-        <UserAdd></UserAdd>
+        <UserAdd add={this.addUser} users={this.state.users}></UserAdd>
 
         <UserListHeader></UserListHeader>
-        <UserListView>
+        <UserListView users={this.state.users}>
             button here
         </UserListView>
 
