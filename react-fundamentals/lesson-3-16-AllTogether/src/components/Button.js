@@ -1,9 +1,8 @@
 import React from 'react'
 
-const Button = ({text})=>{
-
+const Button = ({isDisabled, text})=>{
     return(
-        <button>{text}</button>
+        <button disabled={isDisabled} >{text}</button>
     )
 
 }
