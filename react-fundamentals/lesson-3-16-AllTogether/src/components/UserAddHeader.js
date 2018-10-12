@@ -5,7 +5,7 @@ const UserAddHeader = ()=>{
 
     return(
         <div className="Component">
-            Hey, add users to count the number of games that have been played.
+            <h1>Hey, add users to count the number of games that have been played.</h1>
         </div>
     )
 

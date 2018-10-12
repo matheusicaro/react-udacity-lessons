@@ -11,9 +11,10 @@ class UserAdd extends Component {
             user:{
                 firstName: '',
                 lastName: '',
-                login: ''
+                login: '',
+                numberOfGames: 0
             },
-            isNewUser: true
+            isNewUser: true,
         }
     }
 
@@ -60,7 +61,7 @@ class UserAdd extends Component {
       return (
         <form className="Component" onSubmit={this.handleSubmit}>
             
-            <label for="fname">First Name</label>
+            <label >First Name</label>
             <input 
                 type="text" 
                 id="fname" 
@@ -70,7 +71,7 @@ class UserAdd extends Component {
                 placeholder="Your first name.."
             />
 
-            <label for="lname">Last Name</label>
+            <label >Last Name</label>
             <input 
                 type="text" 
                 id="fname" 
@@ -80,7 +81,7 @@ class UserAdd extends Component {
                 placeholder="Your last name.."
             />
 
-            <label for="lname">Your Login</label>
+            <label >Your Login</label>
             <input 
                 type="text" 
                 id="fname" 
@@ -90,7 +91,7 @@ class UserAdd extends Component {
                 placeholder="Your login for access.."
             />    
 
-            <Button isDisabled={this.isInvalidForm()} text="Submit"></Button>
+            <Button isDisabled={this.isInvalidForm()} text="Add"></Button>
             
             { (this.state.isNewUser) ? "" : <div style={warning}> Ops, user existing whith this <b>first name</b></div>  }
 

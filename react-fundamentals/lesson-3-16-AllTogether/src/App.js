@@ -22,8 +22,10 @@ class App extends Component {
     }))
 
   }
-  
+
   render() {
+    const {users} = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -32,12 +34,10 @@ class App extends Component {
         </header>
       
         <UserAddHeader ></UserAddHeader>
-        <UserAdd add={this.addUser} users={this.state.users}></UserAdd>
+        <UserAdd add={this.addUser} users={users}></UserAdd>
 
         <UserListHeader></UserListHeader>
-        <UserListView users={this.state.users}>
-            button here
-        </UserListView>
+        <UserListView users={users}>        </UserListView>
 
       </div>
     );

@@ -5,7 +5,7 @@ const UserListHeader = ()=>{
 
     return(
         <div className="Component">
-            User List Header
+            <h1>List of Users</h1>
         </div>
     )
 

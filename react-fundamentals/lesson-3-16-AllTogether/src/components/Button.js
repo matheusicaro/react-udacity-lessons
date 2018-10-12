@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Button = ({isDisabled, text})=>{
+const Button = (props)=>{
+    
+    
+
     return(
-        <button disabled={isDisabled} >{text}</button>
+        <button disabled={props.isDisabled} >{props.text}</button>
     )
 
 }
