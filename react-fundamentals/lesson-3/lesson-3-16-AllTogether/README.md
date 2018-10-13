@@ -14,3 +14,21 @@ Remember that state cannot be modified outside of the component in which it is d
 components are able to pass data to back up to their parents, which are able to modify their state. Props can go through multiple components to get to the component they ultimately need to reach.
 
 This practice exercise will help you cement your understanding of where to put state, how to update and access state, when to use stateless functional components, and how to use controlled components.
+
+# Demo
+![atividade react](https://user-images.githubusercontent.com/29001162/46910676-accec280-cf1e-11e8-93b4-495d0be282d3.png)
+#
+# How to build the project
+
+### 1. Install project dependencies
+
+```bash
+npm install
+```
+
+## How to run the project
+
+```bash
+npm start
+```
+*Go to http://localhost:3000.*
