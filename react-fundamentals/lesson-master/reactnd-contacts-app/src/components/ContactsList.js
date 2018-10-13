@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
-class ListContacts extends Component{
+class ContactsList extends Component{
 
     static Prototype = {
         contacts: PropTypes.array.isRequired,         // contacts is type of array
@@ -25,7 +25,7 @@ class ListContacts extends Component{
     render(){
 
         const { query } = this.state;
-        const { contacts, onDeleteContact } = this.props;
+        const { contacts, onDeleteContact, onNavigate } = this.props;
 
         const showContacts = (query === '') ? contacts : contacts.filter( element => (
                                 element.name.toLowerCase().includes(query.toLocaleLowerCase())
@@ -42,6 +42,12 @@ class ListContacts extends Component{
                         value={ query }
                         onChange={ (event)=> this.updateQuery(event.target.value) }>
                     </input>
+
+                    <a
+                        href='#create'
+                        onClick={ () => onNavigate('contacts-form')}
+                        className='add-contact'
+                    >Add Contact</a>
                 </div>
 
                 { showContacts.length !== contacts.length && (
@@ -84,4 +90,4 @@ class ListContacts extends Component{
     }  
 }
 
-export default ListContacts
+export default ContactsList
