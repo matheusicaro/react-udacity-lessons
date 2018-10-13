@@ -30,11 +30,8 @@ class App extends Component {
         ...oldState,
         messages: messages
     }))
-    console.log(this.state)
 
   }
-
-
 
   render() {
 
@@ -49,86 +46,22 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         
-        <div className="chat-window">
-
-          <h2>Super Awesome Chat</h2>
-          <MessageWindow user={userAmy} messages={messages} addMessage={this.addMessage}></MessageWindow>
-        
-        </div>
-
         <div className="container">
-        </div>
-        </div>
-
-        /*
-            <MessageWindow user={userAmy}></MessageWindow>
-            <MessageWindow user={userJohn}></MessageWindow>
-      
-
-
+    
+          <div className="chat-window">
+            <h2>Super Awesome Chat</h2>
+            <MessageWindow user={userAmy} messages={messages} addMessage={this.addMessage}></MessageWindow>
+          </div>
 
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
-            <div className="name sender">{users[0].username}</div>
-              <ul className="message-list">
-                {messages.map((message, index) => (
-                  <li
-                    key={index}
-                    className={
-                      message.username === users[0].username ? 'message sender' : 'message recipient'
-                    }
-                  >
-                    <p>{`${message.username}: ${message.text}`}</p>
-                  </li>
-                ))}
-              </ul>
-            <div>
-
-              <form className="input-group">
-                <input type="text" className="form-control" placeholder="Enter your message..." />
-                <div className="input-group-append">
-                  <button className="btn submit-button" disabled={this.isDisabled()}>
-                    SEND
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-
-
-
-
-          <div className="chat-window">
-            <h2>Super Awesome Chat</h2>
-            <div className="name sender">{users[1].username}</div>
-            <ul className="message-list">
-              {messages.map((message, index) => (
-                <li
-                  key={index}
-                  className={
-                    message.username === users[1].username ? 'message sender' : 'message recipient'
-                  }
-                >
-                  <p>{`${message.username}: ${message.text}`}</p>
-                </li>
-              ))}
-            </ul>
-
-            <div>
-              <form className="input-group">
-                <input type="text" className="form-control" placeholder="Enter your message..." />
-                <div className="input-group-append">
-                  <button className="btn submit-button" disabled={this.isDisabled()}>
-                    SEND
-                  </button>
-                </div>
-              </form>
-            </div>
+            <MessageWindow user={userJohn} messages={messages} addMessage={this.addMessage}></MessageWindow>
           </div>
 
         </div>
-      </div>   */
+        
+      </div>
+
     );
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
 import MessageInput from './MessageInput'
 
 class MessageWindow extends Component{
@@ -21,17 +23,18 @@ class MessageWindow extends Component{
     }
 
     render() {
+
         const {user, messages} = this.props;
 
         return (
             <div>
-                <div className="name sender">{user.username}</div>
+                <div className="name sender">{user}</div>
                 <ul className="message-list">
                     {messages.map((message, index) => (
                     <li
                         key={index}
                         className={
-                        message.username === user.username ? 'message sender' : 'message recipient'
+                        message.username === user ? 'message sender' : 'message recipient'
                         }
                     >
                         <p>{`${message.username}: ${message.text}`}</p>
@@ -44,5 +47,9 @@ class MessageWindow extends Component{
         )
     }
 }
+
+MessageWindow.propTypes = {
+    sendMessage: PropTypes.func.isRequired,
+};
 
 export default MessageWindow
