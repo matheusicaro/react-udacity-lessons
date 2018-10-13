@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import MessageWindow from './components/MessageWindow'
+import MessageInput from './components/MessageInput'
+
 /*
 This exercise will help you practice many of your newly aquired React skills.
 
@@ -26,31 +29,48 @@ class App extends Component {
   };
 
   render() {
+
+    const userAmy = users[0].username;
+    const userJohn = users[1].username; 
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
+        
+        <div className="chat-window">
+          <h2>Super Awesome Chat</h2>
+          <MessageWindow user={userAmy} messages={messages}></MessageWindow>
+          <MessageInput ></MessageInput>
+        </div>
         <div className="container">
+
+        {/*
+            <MessageWindow user={userAmy}></MessageWindow>
+            <MessageWindow user={userJohn}></MessageWindow>
+        */}
+
+
+
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
             <div className="name sender">{users[0].username}</div>
-
-            <ul className="message-list">
-              {messages.map((message, index) => (
-                <li
-                  key={index}
-                  className={
-                    message.username === users[0].username ? 'message sender' : 'message recipient'
-                  }
-                >
-                  <p>{`${message.username}: ${message.text}`}</p>
-                </li>
-              ))}
-            </ul>
-
+              <ul className="message-list">
+                {messages.map((message, index) => (
+                  <li
+                    key={index}
+                    className={
+                      message.username === users[0].username ? 'message sender' : 'message recipient'
+                    }
+                  >
+                    <p>{`${message.username}: ${message.text}`}</p>
+                  </li>
+                ))}
+              </ul>
             <div>
+
               <form className="input-group">
                 <input type="text" className="form-control" placeholder="Enter your message..." />
                 <div className="input-group-append">
@@ -61,6 +81,10 @@ class App extends Component {
               </form>
             </div>
           </div>
+
+
+
+
 
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
@@ -89,6 +113,7 @@ class App extends Component {
               </form>
             </div>
           </div>
+
         </div>
       </div>
     );
