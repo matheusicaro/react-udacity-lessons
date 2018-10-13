@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ListContacts from './components/ListContacts';
 import * as ContactsAPI from './utils/ContactsAPI'
 
+
 class App extends Component {
 
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
 
     }))
     ContactsAPI.remove(contact)
+
   }
 
   render() {
