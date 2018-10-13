@@ -11,7 +11,7 @@ class MessageInput extends Component{
     
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.sendMessage(this.message)
+        this.props.sendMessage(this.state.message)
     }
 
     handleInputChange = (event) => {

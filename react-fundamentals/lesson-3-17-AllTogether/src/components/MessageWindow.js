@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MessageInput from './MessageInput'
 
 class MessageWindow extends Component{
 
@@ -9,6 +10,16 @@ class MessageWindow extends Component{
         }
     }
     
+    sendMessage = (message) =>{
+        const { user, messages } = this.props;
+        messages.push({
+            username: user,
+            text: message
+        })
+
+        this.props.addMessage(messages)
+    }
+
     render() {
         const {user, messages} = this.props;
 
@@ -27,6 +38,8 @@ class MessageWindow extends Component{
                     </li>
                     ))}
                 </ul>
+
+                <MessageInput sendMessage={this.sendMessage}></MessageInput>
           </div>
         )
     }

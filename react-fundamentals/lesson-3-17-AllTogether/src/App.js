@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import MessageWindow from './components/MessageWindow'
-import MessageInput from './components/MessageInput'
 
 /*
 This exercise will help you practice many of your newly aquired React skills.
@@ -20,18 +19,28 @@ const messages = [
 ];
 
 class App extends Component {
-  /*
-  If the user did not type anything, he/she should not be
-  allowed to submit.
-  */
-  isDisabled = () => {
-    return false;
-  };
+
+  state = {
+      messages: messages
+  }
+
+  addMessage = (messages) =>{
+    
+    this.setState(oldState =>({
+        ...oldState,
+        messages: messages
+    }))
+    console.log(this.state)
+
+  }
+
+
 
   render() {
 
     const userAmy = users[0].username;
     const userJohn = users[1].username; 
+    const messages = this.state.messages;
 
     return (
       <div className="App">
@@ -41,16 +50,20 @@ class App extends Component {
         </header>
         
         <div className="chat-window">
-          <h2>Super Awesome Chat</h2>
-          <MessageWindow user={userAmy} messages={messages}></MessageWindow>
-          <MessageInput ></MessageInput>
-        </div>
-        <div className="container">
 
-        {/*
+          <h2>Super Awesome Chat</h2>
+          <MessageWindow user={userAmy} messages={messages} addMessage={this.addMessage}></MessageWindow>
+        
+        </div>
+
+        <div className="container">
+        </div>
+        </div>
+
+        /*
             <MessageWindow user={userAmy}></MessageWindow>
             <MessageWindow user={userJohn}></MessageWindow>
-        */}
+      
 
 
 
@@ -115,7 +128,7 @@ class App extends Component {
           </div>
 
         </div>
-      </div>
+      </div>   */
     );
   }
 }
