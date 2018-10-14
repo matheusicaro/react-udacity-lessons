@@ -9,12 +9,6 @@ class ContatsForm extends Component{
             <div>
                 Create Contact
 
-                
-                <button
-                        href='#create'
-                        onClick={ (event)=> onNavigate('contacts-list')}
-                        className='add-contact'
-                    >Add Contact</button>
             </div>
         )
     }
