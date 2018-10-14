@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import ContactsList from './components/ContactsList';
 import ContatsForm from './components/ContatsForm';
+import { Route } from 'react-router-dom'
 
 import * as ContactsAPI from './utils/ContactsAPI'
-
 
 class App extends Component {
 
   state = {
     contacts: [],
-    screen:'contacts-list'
   }
   
   componentDidMount() {
@@ -34,33 +33,23 @@ class App extends Component {
 
   }
 
-  onNavigate = (component) =>{
-
-    this.setState( { screen: component} )
-
-  }
-
   render() {
     const {screen} = this.state;
 
     return (
       <div onClick="" >
       
-      { (screen === 'contacts-list') && (
+        <Route exact path='/' render={() => (
 
-          <ContactsList 
-            contacts={ this.state.contacts }
-            onDeleteContact={ this.removeContac }
-            onNavigate={this.onNavigate}
-          >
-          </ContactsList>
-      )}
+            <ContactsList 
+              contacts={ this.state.contacts }
+              onDeleteContact={ this.removeContac }
+            >
+            </ContactsList>
+        )}/>
 
-      { (screen === 'contacts-form') && (
-
-        <ContatsForm  onNavigate={this.onNavigate}></ContatsForm>
-      )}
-
+        <Route path='/create' component={ ContatsForm} />
+        
       </div>
     );
   }
