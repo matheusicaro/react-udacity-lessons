@@ -72,7 +72,7 @@ class ContactsList extends Component{
                                 
                                 <div className='contact-details'>
                                     <p>{ element.name }</p>
-                                    <p>@{ element.handle }</p>
+                                    <p>{ element.handle }</p>
                                 </div>
 
                                 <button
